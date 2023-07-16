@@ -40,10 +40,7 @@ public class PeliculaController {
         return peliculaservicio.findById(id);
     }*/
 
-    @PostMapping
-    public PeliculasEntity add(@RequestBody PeliculasEntity p) {
-        return peliculaservicio.add(p);
-    }
+
 
     @PutMapping("/{id}")
     public PeliculasEntity update(@PathVariable Long id, @RequestBody PeliculasEntity p) {
