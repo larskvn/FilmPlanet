@@ -27,9 +27,65 @@ public class HorarioEntity {
     private String hora;
     private String sala;
     private double precio;
+    private Boolean state=true;
 
     @ManyToOne
     @JoinColumn(name = "id_pelicula")
     private PeliculasEntity pelicula;
 
+ public Long getId() {
+  return id;
+ }
+
+ public void setId(Long id) {
+  this.id = id;
+ }
+
+ public LocalDate getFecha() {
+  return fecha;
+ }
+
+ public void setFecha(LocalDate fecha) {
+  this.fecha = fecha;
+ }
+
+ public String getHora() {
+  return hora;
+ }
+
+ public void setHora(String hora) {
+  this.hora = hora;
+ }
+
+ public String getSala() {
+  return sala;
+ }
+
+ public void setSala(String sala) {
+  this.sala = sala;
+ }
+
+ public double getPrecio() {
+  return precio;
+ }
+
+ public void setPrecio(double precio) {
+  this.precio = precio;
+ }
+
+ public Boolean getState() {
+  return state;
+ }
+
+ public void setState(Boolean state) {
+  this.state = state;
+ }
+
+ public PeliculasEntity getPelicula() {
+  return pelicula;
+ }
+
+ public void setPelicula(PeliculasEntity pelicula) {
+  this.pelicula = pelicula;
+ }
 }
