@@ -33,7 +33,7 @@ public class HomeController {
     public List<ActorEntity> findAllCustomActor() {
         return actorservicio.findAllCustom();
     }
-    @GetMapping("/{id}")
+    @GetMapping("/actor-na/{id}")
     public  Optional<ActorEntity> findByIdActor(@PathVariable long id){
         return actorservicio.findById(id);
     }
@@ -43,8 +43,7 @@ public class HomeController {
     public List<HorarioEntity> findAllCustomHorario(){
         return horarioService.findAllCustom();
     }
-    @GetMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN','USER')")
+    @GetMapping("/horario-na/{id}")
     public Optional<HorarioEntity> findByIdHorario(@PathVariable Long id){
         return horarioService.findById(id);
     }
@@ -55,7 +54,7 @@ public class HomeController {
     public List<PeliculasEntity> findAllCustomPelicula() {
         return peliculaservicio.findAllCustom();
     }
-    @GetMapping("/{id}")
+    @GetMapping("/pelicula-na/{id}")
     public Optional<PeliculasEntity> findByIdPelicuala(@PathVariable long id) {
         return peliculaservicio.findById(id);
     }
