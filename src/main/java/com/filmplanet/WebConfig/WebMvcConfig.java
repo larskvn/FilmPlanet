@@ -13,7 +13,7 @@ public class WebMvcConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://smartheal.vercel.app","http://localhost:3000","https://smarth-api-gateway.azurewebsites.net/")
+                        .allowedOrigins("https://movie-app-phi-lyart.vercel.app/","http://localhost:3000","https://smarth-api-gateway.azurewebsites.net/")
                         .allowedMethods("GET", "POST", "PUT", "DELETE");
             }
         };
