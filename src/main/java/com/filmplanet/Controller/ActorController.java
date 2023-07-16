@@ -30,10 +30,10 @@ public class ActorController {
         return actorservicio.findAll();
     }
     
-    @GetMapping("/{id}")
+   /*  @GetMapping("/{id}")
     public  Optional<ActorEntity> findById(@PathVariable long id){
         return actorservicio.findById(id);
-    }
+    }*/
     
     @PostMapping
     public ActorEntity add(@RequestBody ActorEntity a){

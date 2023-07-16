@@ -22,11 +22,11 @@ public class HorarioController {
         return horarioService.findAll();
     }
 
-    @GetMapping("/{id}")
+   /* @GetMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public Optional<HorarioEntity> findById(@PathVariable Long id){
         return horarioService.findById(id);
-    }
+    }*/
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
     public HorarioEntity add(@RequestBody HorarioEntity horario){

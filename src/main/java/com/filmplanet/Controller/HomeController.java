@@ -7,11 +7,14 @@ import com.filmplanet.Service.ActorService;
 import com.filmplanet.Service.HorarioService;
 import com.filmplanet.Service.PeliculaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/home")
@@ -30,11 +33,20 @@ public class HomeController {
     public List<ActorEntity> findAllCustomActor() {
         return actorservicio.findAllCustom();
     }
+    @GetMapping("/{id}")
+    public  Optional<ActorEntity> findByIdActor(@PathVariable long id){
+        return actorservicio.findById(id);
+    }
 
 
     @GetMapping("/horario-na/Custom")
     public List<HorarioEntity> findAllCustomHorario(){
         return horarioService.findAllCustom();
+    }
+    @GetMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN','USER')")
+    public Optional<HorarioEntity> findByIdHorario(@PathVariable Long id){
+        return horarioService.findById(id);
     }
 
 
@@ -42,5 +54,9 @@ public class HomeController {
     @GetMapping("/pelicula-na/Custom")
     public List<PeliculasEntity> findAllCustomPelicula() {
         return peliculaservicio.findAllCustom();
+    }
+    @GetMapping("/{id}")
+    public Optional<PeliculasEntity> findByIdPelicuala(@PathVariable long id) {
+        return peliculaservicio.findById(id);
     }
 }
