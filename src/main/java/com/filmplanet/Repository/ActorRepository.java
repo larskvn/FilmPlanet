@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ActorRepository extends JpaRepository<ActorEntity, Long>{
-    @Query(value = "SELECT * FROM ActorEntity WHERE estado = '1'", nativeQuery = true)
+    @Query(value = "SELECT * FROM actor WHERE estado = '1'", nativeQuery = true)
     List<ActorEntity> findAllCustom();
    
     

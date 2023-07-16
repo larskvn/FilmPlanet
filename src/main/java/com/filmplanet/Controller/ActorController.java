@@ -29,11 +29,6 @@ public class ActorController {
     public List<ActorEntity> findAll() {
         return actorservicio.findAll();
     }
-
-    @GetMapping("/Custom")
-    public List<ActorEntity> findAllCustom() {
-        return actorservicio.findAllCustom();
-    }
     
     @GetMapping("/{id}")
     public  Optional<ActorEntity> findById(@PathVariable long id){

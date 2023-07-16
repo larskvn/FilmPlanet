@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PeliculasRepository extends JpaRepository<PeliculasEntity, Long> {
-     @Query(value = "SELECT * FROM PeliculaEntity WHERE estado = '1'", nativeQuery = true)
+     @Query(value = "SELECT * FROM pelicula WHERE estado = '1'", nativeQuery = true)
      List<PeliculasEntity> findAllCustom();
 }

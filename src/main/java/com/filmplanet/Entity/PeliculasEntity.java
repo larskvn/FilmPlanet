@@ -4,6 +4,7 @@
  */
 package com.filmplanet.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,8 +28,8 @@ import lombok.NoArgsConstructor;
 
 @Entity(name = "PeliculasEntity")
 @Table(name = "pelicula")
-public class PeliculasEntity  {
-    
+public class PeliculasEntity implements Serializable {
+    private static final long serialVersionUID=1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,10 +39,10 @@ public class PeliculasEntity  {
     @Column(name = "name")
     private String nombre;
 
-    @Column(name = "descripcion")
+    @Column(name = "descripcion",length = 2000)
     private String descripcion;
 
-    @Column(name = "img")
+    @Column(name = "img", length = 2000)
     private String img;
 
     @Column(name = "language")
@@ -50,7 +51,7 @@ public class PeliculasEntity  {
     @Column(name = "year")
     private LocalDate year;
 
-    @Column(name = "video")
+    @Column(name = "video", length = 2000)
     private String video;
 
     @Column(name = "rate")
@@ -59,6 +60,7 @@ public class PeliculasEntity  {
     @Column(name = "estado")
     private Boolean estado;
 
+    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "categoria_id", nullable = false)
     public CategoriaEntity categoria_id;

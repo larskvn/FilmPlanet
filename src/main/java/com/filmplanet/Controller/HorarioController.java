@@ -17,13 +17,9 @@ public class HorarioController {
     HorarioService horarioService;
 
     @GetMapping
-    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public List<HorarioEntity> getAllHorarios() {
         return horarioService.findAll();
-    }
-    @GetMapping("/Custom")
-    public List<HorarioEntity> findAllCustom(){
-        return horarioService.findAllCustom();
     }
 
     @GetMapping("/{id}")
@@ -37,7 +33,7 @@ public class HorarioController {
         return horarioService.add(horario);
     }
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public HorarioEntity update(@PathVariable Long id, @RequestBody HorarioEntity horario){
         horario.setId(id);
         return horarioService.update(horario);

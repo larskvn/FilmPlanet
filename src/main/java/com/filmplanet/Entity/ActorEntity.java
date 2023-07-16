@@ -38,7 +38,7 @@ public class ActorEntity  {
     @Column(name = "apellido")
     private String apellido;
     
-    @Column(name = "descripcion")
+    @Column(name = "descripcion",length = 2000)
     private String descripcion;
     
     @Column(name = "estado")
