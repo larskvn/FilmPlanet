@@ -57,8 +57,5 @@ public class HomeController {
     }
 
 
-    @PostMapping("/createPeli")
-    public PeliculasEntity add(@RequestBody PeliculasEntity p) {
-        return peliculaservicio.add(p);
-    }
+
 }

@@ -35,12 +35,15 @@ public class PeliculaController {
         return peliculaservicio.findAllCustom();
     }*/
 
-   /* @GetMapping("/{id}")
+   @GetMapping("/{id}")
     public Optional<PeliculasEntity> findById(@PathVariable long id) {
         return peliculaservicio.findById(id);
-    }*/
+    }
 
-
+    @PostMapping()
+    public PeliculasEntity add(@RequestBody PeliculasEntity p) {
+        return peliculaservicio.add(p);
+    }
 
     @PutMapping("/{id}")
     public PeliculasEntity update(@PathVariable Long id, @RequestBody PeliculasEntity p) {
