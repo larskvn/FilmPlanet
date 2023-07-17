@@ -52,8 +52,8 @@ public class SecurityConfig {
                 .cors()
                 .and()
                 .authorizeHttpRequests(auth->{
-                    auth.requestMatchers("/login","/create-admin","/create-user","/home/**").permitAll();
-                    auth.anyRequest().authenticated();//permitAll
+                    auth.requestMatchers("/login","/create-admin","/create-user","/home/**","/pelicula/**").permitAll();
+                    auth.anyRequest().authenticated();//authenticated();//permitAll
                 })
                 .sessionManagement(session-> {
                     session.sessionCreationPolicy(SessionCreationPolicy.STATELESS);

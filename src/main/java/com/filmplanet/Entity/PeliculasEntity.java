@@ -60,7 +60,7 @@ public class PeliculasEntity implements Serializable {
     @Column(name = "estado")
     private Boolean estado;
 
-    //@JsonIgnore
+    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "categoria_id", nullable = false)
     public CategoriaEntity categoria_id;
